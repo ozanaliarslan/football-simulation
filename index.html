@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Futbol Lig Simülasyonu</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>Futbol Lig Simülasyonu</h1>
+
+  <!-- Lig Oluşturma Bölümü -->
+  <div id="ligOlusturma">
+    <h2>Lig Oluşturma</h2>
+
+    <!-- Lig Ayarları -->
+    <div>
+      <h3>Lig Ayarları</h3>
+      <label for="takimSayisi">Lig'deki Takım Sayısı (Çift Sayı): </label>
+      <input type="number" id="takimSayisi" min="2" step="2" value="18">
+    </div>
+
+    <!-- Takım Ekleme -->
+    <div>
+      <h3>Takım Ekleme</h3>
+      <!-- Lig Seçimi -->
+      <div>
+        <h4>Lig Seçimi</h4>
+        <select id="ligSecimi">
+          <option value="">Lig Seçiniz</option>
+          <!-- Lig seçenekleri JavaScript ile doldurulacak -->
+        </select>
+        <button onclick="ligTakimlariniGetir()">Lig Takımlarını Göster</button>
+      </div>
+
+      <!-- Mevcut Takımlar -->
+      <div>
+        <h4>Mevcut Takımlar</h4>
+        <div id="mevcutTakimlar">
+          <!-- Takım listesi JavaScript ile doldurulacak -->
+        </div>
+      </div>
+
+      <!-- Manuel Takım Ekleme -->
+      <div>
+        <h4>Manuel Takım Ekleme</h4>
+        <input type="text" id="takimAdi" placeholder="Takım Adı">
+        <button onclick="takimEkle()">Takım Ekle</button>
+      </div>
+
+      <!-- Otomatik Takım Ekleme -->
+      <div>
+        <h4>Otomatik Takım Ekleme</h4>
+        <button onclick="otomatikTakimEkle()">Otomatik Takım Ekle</button>
+      </div>
+
+      <!-- Seçilen Takımlar -->
+      <div>
+        <h4>Seçilen Takımlar</h4>
+        <ul id="takimListesi"></ul>
+      </div>
+
+      <!-- Oyunu Başlat -->
+      <button onclick="oyunuBaslat()">Oyunu Başlat</button>
+    </div>
+  </div>
+
+  <!-- Oyun Bölümü -->
+  <div id="oyunBolumu" style="display: none;">
+    <!-- Fikstür ve Maçlar -->
+    <div id="fiksturBolumu">
+      <h2>Fikstür</h2>
+      <div class="inline-buttons">
+        <button onclick="oncekiHafta()">&lt; Önceki Hafta</button>
+        <span id="haftaNumarasi"></span>
+        <button onclick="sonrakiHafta()">Sonraki Hafta &gt;</button>
+      </div>
+      <table id="fiksturTablo">
+        <!-- Fikstür ve maçlar buraya gelecek -->
+      </table>
+      <div>
+        <button onclick="tumMaclariOynat()">Tüm Maçları Oyna</button>
+      </div>
+    </div>
+
+    <!-- Puan Tablosu -->
+    <div id="puanTablosuBolumu">
+      <h2>Puan Durumu</h2>
+      <div id="puanTablosu"></div>
+    </div>
+
+    <!-- Yeniden Başlat Butonu -->
+    <div>
+      <button onclick="oyunuYenidenBaslat()" class="restart-button">Yeniden Başlat</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
