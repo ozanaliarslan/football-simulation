@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Futbol Turnuva Simülasyonu</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>Futbol Turnuva Simülasyonu</h1>
+
+  <!-- Turnuva Ayarları Bölümü -->
+  <div id="turnuvaAyarları">
+    <h2>Turnuva Ayarları</h2>
+
+    <!-- Takım Sayısı -->
+    <div>
+      <h3>Takım Ayarları</h3>
+      <label for="takimSayisi">Takım Sayısı (16'nın Katı, En Az 16): </label>
+      <input type="number" id="takimSayisi" min="16" step="16" value="16">
+    </div>
+
+    <!-- Takım Ekleme -->
+    <div>
+      <h3>Takım Ekleme</h3>
+      <!-- Lig Seçimi -->
+      <div>
+        <h4>Lig Seçimi</h4>
+        <select id="ligSecimi">
+          <option value="">Lig Seçiniz</option>
+          <!-- Lig seçenekleri JavaScript ile doldurulacak -->
+        </select>
+        <button onclick="ligTakimlariniGetir()">Lig Takımlarını Göster</button>
+      </div>
+
+      <!-- Mevcut Takımlar -->
+      <div>
+        <h4>Mevcut Takımlar</h4>
+        <div id="mevcutTakimlar">
+          <!-- Takım listesi JavaScript ile doldurulacak -->
+        </div>
+      </div>
+
+      <!-- Manuel Takım Ekleme -->
+      <div>
+        <h4>Manuel Takım Ekleme</h4>
+        <input type="text" id="takimAdi" placeholder="Takım Adı">
+        <button onclick="takimEkle()">Takım Ekle</button>
+      </div>
+
+      <!-- Otomatik Takım Ekleme -->
+      <div>
+        <h4>Otomatik Takım Ekleme</h4>
+        <button onclick="otomatikTakimEkle()">Otomatik Takım Ekle</button>
+      </div>
+
+      <!-- Seçilen Takımlar -->
+      <div>
+        <h4>Seçilen Takımlar</h4>
+        <ul id="takimListesi"></ul>
+      </div>
+
+      <!-- Turnuvayı Başlat -->
+      <button onclick="turnuvayiBaslat()">Turnuvayı Başlat</button>
+    </div>
+  </div>
+
+  <!-- Turnuva Bölümü -->
+  <div id="turnuvaBolumu" style="display: none;">
+    <!-- Grup Aşaması -->
+    <div id="grupAsamasi">
+      <h2>Grup Aşaması</h2>
+      <div id="grupListesi">
+        <!-- Gruplar buraya gelecek -->
+      </div>
+    </div>
+
+    <!-- Eleme Aşaması -->
+    <div id="elemeAsamasi" style="display: none;">
+      <h2>Eleme Aşaması</h2>
+      <div id="elemeTurlari">
+        <!-- Eleme turları buraya gelecek -->
+      </div>
+    </div>
+
+    <!-- Yeniden Başlat Butonu -->
+    <div>
+      <button onclick="oyunuYenidenBaslat()" class="restart-button">Yeniden Başlat</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
